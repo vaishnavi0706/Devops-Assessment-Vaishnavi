@@ -3,9 +3,6 @@ resource "azurerm_resource_group" "main" {
   location = var.location
 }
 
-# ---------------------------------------------------
-# Backend resources (Terraform creates your backend)
-# ---------------------------------------------------
 resource "azurerm_resource_group" "tfstate" {
   name     = "tfstate-rg"
   location = var.location
@@ -30,9 +27,6 @@ resource "azurerm_storage_container" "tfstate" {
   container_access_type = "private"
 }
 
-# ---------------------------------------------------
-# Infrastructure Module (ONE MODULE ONLY)
-# ---------------------------------------------------
 module "infrastructure" {
   source = "./modules/infra"
 

@@ -1,6 +1,5 @@
-# -----------------------------
+
 # VNet + Subnets
-# -----------------------------
 resource "azurerm_virtual_network" "vnet" {
   name                = "project-vnet"
   location            = var.location
@@ -22,9 +21,7 @@ resource "azurerm_subnet" "private" {
   address_prefixes     = ["10.100.2.0/24"]
 }
 
-# -----------------------------
 # NSG
-# -----------------------------
 resource "azurerm_network_security_group" "nsg" {
   name                = "project-nsg"
   location            = var.location
@@ -36,9 +33,7 @@ resource "azurerm_subnet_network_security_group_association" "private_assoc" {
   network_security_group_id = azurerm_network_security_group.nsg.id
 }
 
-# -----------------------------
 # AKS Cluster
-# -----------------------------
 resource "azurerm_kubernetes_cluster" "aks" {
   name                = var.cluster_name
   location            = var.location
