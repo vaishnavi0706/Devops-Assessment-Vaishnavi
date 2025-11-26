@@ -93,7 +93,7 @@ jobs:
         run: |
           docker build -t vaishnavi0706/frontend:latest ./app-deployment/app/frontend
           docker push vaishnavi0706/frontend:latest
-          docker build -t vaishnavi0706/backend:latest ./pp-deployment/app/backend
+          docker build -t vaishnavi0706/backend:latest ./app-deployment/app/backend
           docker push vaishnavi0706/backend:latest
 
       -  name: Setup kubeconfig
