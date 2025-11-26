@@ -71,4 +71,4 @@ jobs:
         run: kubectl rollout status deployment/frontend && kubectl rollout status deployment/backend
 
       - name: Smoke Test API
-        run: curl -f http://<ingress-ip>/api/health
+        run: curl -f http://4.187.159.100/api/health
