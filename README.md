@@ -10,8 +10,6 @@ This project demonstrates a complete DevOps workflow, including infrastructure p
 - **CI/CD:** GitHub Actions for automated build, deploy, and validation  
 
 ---
-
-## Folder Structure
 ## Folder Structure
 
 project-root/ <br>
@@ -34,7 +32,7 @@ project-root/ <br>
 
 
   **Terraform (Infrastructure)**  
-  - Provisioned cloud infrastructure: VPC, subnets, security groups, NAT, and managed Kubernetes cluster (EKS/AKS)  
+  - Provisioned cloud infrastructure: VPC, subnets, security groups, and managed Kubernetes cluster (AKS)  
   - Used Terraform modules and remote backend for state management  
 
 - **Docker (Containerization)**  
