@@ -14,16 +14,16 @@ spec:
     spec:
       containers:
       - name: backend
-        image: vaishnavi0706/backend:latest
+        image: vaishnavi0706/backend:prometheus
         ports:
         - containerPort: 5000
         resources:
           requests:
+            cpu: "100m"
+            memory: "64Mi"
+          limits:
             cpu: "250m"
             memory: "128Mi"
-          limits:
-            cpu: "500m"
-            memory: "256Mi"
         livenessProbe:
           httpGet:
             path: /health
