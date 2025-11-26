@@ -29,7 +29,7 @@ project-root/
 └── .github/
 └── workflows/
 
-**Terraform (Infrastructure)**  
+  **Terraform (Infrastructure)**  
   - Provisioned cloud infrastructure: VPC, subnets, security groups, NAT, and managed Kubernetes cluster (EKS/AKS)  
   - Used Terraform modules and remote backend for state management  
 
