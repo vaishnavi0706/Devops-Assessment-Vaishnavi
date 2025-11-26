@@ -58,6 +58,12 @@ jobs:
           docker build -t vaishnavi0706/backend:latest ./pp-deployment/app/backend
           docker push vaishnavi0706/backend:latest
 
+      -  name: Setup kubeconfig
+         run: |
+          echo "${{ secrets.KUBECONFIG_DATA }}" | base64 --decode > $HOME/.kube/config
+          export KUBECONFIG=$HOME/.kube/config
+
+
       - name: Kubernetes Deploy
         run: kubectl apply -f ./app-deployment/k8s/
 
