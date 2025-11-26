@@ -1,0 +1,14 @@
+
+
+1. CrashLoopBackOff – Wrong Command:  
+During deployment, the backend pod kept restarting and did not become ready. Upon checking the deployment YAML, we found that the command was set as `["python", "main.py"]`, but the backend application file is actually named `app.py`. We fixed this issue by updating the command in `backend-deployment.yml` to `["python", "app.py"]`. After this change, the backend pod started successfully.
+
+2. Ingress Route Failure:
+Requests to the backend through the Ingress were failing. The Ingress was routing requests to `/backend`, but the backend service listens on the `/api` path. We corrected the Ingress path in `app-ingress.yml` from `/backend` to `/api`. After this change, requests reached the backend successfully.
+
+3. Terraform Backend Error:  
+While initializing Terraform, we encountered an error related to the remote backend. The cause was that the container name was missing in the `backend.tf` file, fixed this by specifying the correct container name and region  in the backend configuration. Terraform was then able to initialize and apply the infrastructure without errors.
+
+4. FluentBit Log Path Bug:  
+Logs from pods were not appearing in Kibana. Upon investigation, we found that FluentBit was configured to read log files with the path `*.logx`, which is incorrect.Updated the FluentBit configuration to read logs from `/var/log/containers/*.log`. 
+
