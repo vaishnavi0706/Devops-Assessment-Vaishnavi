@@ -28,3 +28,20 @@ project-root/
 
 └── .github/
 └── workflows/
+
+**Terraform (Infrastructure)**  
+  - Provisioned cloud infrastructure: VPC, subnets, security groups, NAT, and managed Kubernetes cluster (EKS/AKS)  
+  - Used Terraform modules and remote backend for state management  
+
+- **Docker (Containerization)**  
+  - Created Docker images for backend (Python API) and frontend (Nginx)  
+  - Managed dependencies and Dockerfiles for both services  
+
+- **Kubernetes (Orchestration)**  
+  - Deployed backend and frontend using Deployments and Services  
+  - Configured Ingress, ConfigMaps, Secrets, resource limits, and liveness/readiness probes  
+  - Implemented rolling updates and verified deployments  
+
+- **Observability**  
+  - **Grafana:** Installed via Helm, connected to Prometheus, dashboards for pod/node CPU & memory, API latency, and request count  
+  - **Kibana + Elasticsearch + FluentBit:** Collected JSON logs from all pods, custom dashboards for errors, status codes, requests, and top endpoints  
