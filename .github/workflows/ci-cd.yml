@@ -27,10 +27,14 @@ jobs:
       - name: Docker Build Test
         run: docker build -t test-frontend ./app-deployment/app/frontend && docker build -t test-backend ./app-deployment/app/backend
 
+      - name: Install kubeval
+        run: |
+           curl -sLO https://github.com/instrumenta/kubeval/releases/latest/download/kubeval-linux-amd64.tar.gz
+           tar xf kubeval-linux-amd64.tar.gz
+           sudo mv kubeval /usr/local/bin/
+
       - name: Validate Kubernetes manifests (syntax only)
-        uses: instrumenta/kubeval-action@v1.0.0
-        with:
-          files: app-deployment/k8s/
+        run: kubeval app-deployment/k8s/
 
   cd:
     needs: ci
