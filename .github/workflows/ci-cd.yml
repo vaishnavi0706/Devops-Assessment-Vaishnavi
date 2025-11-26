@@ -54,7 +54,7 @@ jobs:
           sudo mv kubeval /usr/local/bin/
 
       - name: Validate Kubernetes manifests (syntax only)
-        run: kubeval --ignore-missing-schemas app-deployment/k8s/*.{yml,yaml}
+        run: kubeval --ignore-missing-schemas app-deployment/k8s/*.yml
 
   cd:
     needs: ci
