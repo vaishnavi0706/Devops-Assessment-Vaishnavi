@@ -1,4 +1,4 @@
-# DevOps Full Stack Project
+# DevOps 2 tier Project
 
 ## Project Overview
 This project demonstrates a complete DevOps workflow, including infrastructure provisioning, containerization, Kubernetes orchestration, CI/CD automation, and observability. It simulates a production-ready environment.
@@ -15,35 +15,16 @@ This project demonstrates a complete DevOps workflow, including infrastructure p
 project-root/
 ├── terraform/
 │ ├── main.tf
-│ ├── variables.tf
-│ ├── outputs.tf
-│ ├── backend.tf
 │ └── modules/
-│ └── infra/
+
 ├── app-deployment/
 │ ├── app/
 │ │ ├── backend/
-│ │ │ ├── Dockerfile
-│ │ │ ├── app.py
-│ │ │ └── requirements.txt
 │ │ └── frontend/
-│ │ ├── Dockerfile
-│ │ └── index.html
 │ └── k8s/
-│ ├── backend-deployment.yml
-│ ├── backend-service.yml
-│ ├── frontend-deployment.yml
-│ ├── frontend-service.yml
-│ ├── app-ingress.yml
-│ ├── configmap.yml
-│ └── secrets.yml
+
 ├── observability/
 │ └── screenshots/
-├── .github/
-│ └── workflows/
-│ └── ci-cd.yml
-├── README.md
-├── ppt/
-│ └── presentation.pptx
-└── debugging/
-└── debugging.md
+
+└── .github/
+└── workflows/
