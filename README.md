@@ -31,7 +31,7 @@ project-root/ <br>
     └── workflows/ <br>
 
 
-  **Terraform (Infrastructure)**  
+   **Terraform (Infrastructure)**  
   - Provisioned cloud infrastructure: VPC, subnets, security groups, and managed Kubernetes cluster (AKS)  
   - Used Terraform modules and remote backend for state management  
 
