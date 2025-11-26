@@ -12,19 +12,26 @@ This project demonstrates a complete DevOps workflow, including infrastructure p
 ---
 
 ## Folder Structure
-project-root/
-├── terraform/
-│   ├── main.tf
-│   └── modules/
-├── app-deployment/
-│   ├── app/
-│   │   ├── backend/
-│   │   └── frontend/
-│   └── k8s/
-├── observability/
-│   └── screenshots/
-└── .github/
-    └── workflows/
+## Folder Structure
+
+project-root/ <br>
+├── terraform/ <br>
+│   ├── main.tf <br>
+│   ├── variables.tf <br>
+│   ├── outputs.tf <br>
+│   ├── provider.tf <br>
+│   └── backend.tf <br>
+│   └── modules/ <br>
+├── app-deployment/ <br>
+│   ├── app/ <br>
+│   │   ├── backend/ <br>
+│   │   └── frontend/ <br>
+│   └── k8s/ <br>
+├── observability/ <br>
+│   └── screenshots/ <br>
+└── .github/ <br>
+    └── workflows/ <br>
+
 
   **Terraform (Infrastructure)**  
   - Provisioned cloud infrastructure: VPC, subnets, security groups, NAT, and managed Kubernetes cluster (EKS/AKS)  
