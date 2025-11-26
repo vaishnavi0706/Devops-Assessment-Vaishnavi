@@ -28,7 +28,7 @@ jobs:
         run: docker build -t test-frontend ./app-deployment/app/frontend && docker build -t test-backend ./app-deployment/app/backend
 
       - name: Kubernetes Lint
-        run: kubectl apply --dry-run=client -f k8s/
+        run: kubectl apply --dry-run=client -f ./app-deployment/k8s/
 
   cd:
     needs: ci
@@ -59,7 +59,7 @@ jobs:
           docker push vaishnavi0706/backend:latest
 
       - name: Kubernetes Deploy
-        run: kubectl apply -f k8s/
+        run: kubectl apply -f ./app-deployment/k8s/
 
       - name: Rollout Verification
         run: kubectl rollout status deployment/frontend && kubectl rollout status deployment/backend
